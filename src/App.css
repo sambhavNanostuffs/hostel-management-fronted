@@ -352,3 +352,7 @@ strong {
 .me :hover {
   color: black;
 }
+
+.me .nav-link {
+  font-family: GilroyMedium, sans-serif !important;
+}
