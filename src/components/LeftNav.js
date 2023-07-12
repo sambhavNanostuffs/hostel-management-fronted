@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 function Carrot({ open }) {
   if (open === true) {
     return (
-      <i className="fa fa-caret-up float-right" aria-hidden="true"></i>
+      <i className="fa fa-caret-up float-right mt-1 ml-1" aria-hidden="true"></i>
     )
   }
   else {
     return (
-      <i className="fa fa-caret-down float-right"></i>
+      <i className="fa fa-caret-down float-right mt-1 ml-1"></i>
 
     );
   }
@@ -79,11 +79,11 @@ export default class LeftNav extends Component {
             <Nav navbar className="flex-column">
               <NavItem>
                 <Link className="nav-link" to="/admin/dashboard">
-                  <i className="fa fa-tachometer-alt" aria-hidden="true"></i>Dashboard
+                  <i className="fa fa-tachometer-alt mr-3" aria-hidden="true" style={{marginRight: "5px"}}></i>Dashboard
                       </Link>
               </NavItem>
               <NavItem>
-                <Link id="toggler" onClick={this.toggleManageMeal} className="nav-link" to="/admin/MealManage"> <i className="fa fa-utensils" aria-hidden="true"></i> Meal Manage
+                <Link id="toggler" onClick={this.toggleManageMeal} className="nav-link" to="/admin/MealManage"> <i className="fa fa-utensils mr-3" aria-hidden="true"></i> Meal Manage
                       <Carrot open={this.state.ismealmanageopen} /></Link>
               </NavItem>
               <div>
@@ -99,7 +99,7 @@ export default class LeftNav extends Component {
               </div>
 
               <NavItem>
-                <Link className="nav-link" id="toggler1" onClick={this.toggleStudentManage} to="/admin/StudentsManage"> <i className="fa fa-child" aria-hidden="true"></i> Students Manage <Carrot open={this.state.isstudentmanageopen} /></Link>
+                <Link className="nav-link" id="toggler1" onClick={this.toggleStudentManage} to="/admin/StudentsManage"> <i className="fa fa-child mr-3" aria-hidden="true"></i> Students Manage <Carrot open={this.state.isstudentmanageopen} /></Link>
               </NavItem>
               <div>
                 <UncontrolledCollapse toggler="#toggler1">
@@ -129,7 +129,7 @@ export default class LeftNav extends Component {
                 </UncontrolledCollapse>
               </div>
               <NavItem>
-                <Link className="nav-link" id="toggler2" onClick={this.toggleEmployeeManage} to="/admin/EmployeeManage"> <i className="fa fa-users" aria-hidden="true"></i> Employee Manage<Carrot open={this.state.isemployeemanageopen} /></Link>
+                <Link className="nav-link" id="toggler2" onClick={this.toggleEmployeeManage} to="/admin/EmployeeManage"> <i className="fa fa-users mr-3" aria-hidden="true"></i> Employee Manage<Carrot open={this.state.isemployeemanageopen} /></Link>
               </NavItem>
 
               <div>
@@ -158,13 +158,13 @@ export default class LeftNav extends Component {
                 </UncontrolledCollapse>
               </div>
               <NavItem>
-                <Link className="nav-link" to="/admin/NoticeBoard"> <i className="fa fa-newspaper-o" aria-hidden="true"></i> Notice Board</Link>
+                <Link className="nav-link" to="/admin/NoticeBoard"> <i className="fa fa-newspaper-o mr-3" aria-hidden="true"></i> Notice Board</Link>
               </NavItem>
               <NavItem>
-                <Link className="nav-link" to="/admin/Architecture"><i className="fa fa-server" aria-hidden="true"></i>Architecture</Link>
+                <Link className="nav-link" to="/admin/Architecture"><i className="fa fa-server fa fa-server mr-3" aria-hidden="true"></i>Architecture</Link>
               </NavItem>
               <NavItem>
-                <Link className="nav-link" to="/admin/Complaints"><i className="fa fa-book" aria-hidden="true"></i>Complaints</Link>
+                <Link className="nav-link" to="/admin/Complaints"><i className="fa fa-book fa fa-server mr-3" aria-hidden="true"></i>Complaints</Link>
               </NavItem>
 
             </Nav>
