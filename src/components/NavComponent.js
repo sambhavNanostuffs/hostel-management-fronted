@@ -90,18 +90,18 @@ class Bar extends Component {
             button = <LoginButton />;
         }
         return (
-            <div>
+            <div className='col-8'>
                 <Navbar light expand="md" className="me">
                     <div className="container-fluid">
                         <ul className="mr-auto nav me">
                             <li className="nav-item">
                                 <Link className="nav-link me" to="/home">
-                                    <span className="fa fa-home fa-lg"></span> Home
+                                    <span className="fa fa-home fa-lg" style={{paddingRight:'5px'}}></span> Home
                                 </Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link me" to="/contactus">
-                                    <span className="fa fa-address-book fa-lg"></span> Contact Us
+                                    <span className="fa fa-address-book fa-lg" style={{paddingRight:'7px'}}></span> Contact Us
                                 </Link>
                             </li>
                             <li className="nav-item">
@@ -109,7 +109,7 @@ class Bar extends Component {
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link me" to="/login">
-                                    <span className="fa fa-tachometer-alt"></span>Go to DashBoard
+                                    <span className="fa fa-tachometer-alt" style={{paddingRight:'7px'}}></span>Go to DashBoard
                                 </Link>
                             </li>
                         </ul>
@@ -121,11 +121,11 @@ class Bar extends Component {
 }
 
 function LoginButton(props) {
-    return (<Link className="nav-link me" to="/login"><span className="fa fa-sign-in-alt fa-lg"></span> Login</Link>);
+    return (<Link className="nav-link me" to="/login"><span className="fa fa-sign-in-alt fa-lg" style={{paddingRight:'7px'}}></span> Login</Link>);
 }
 
 function LogoutButton(props) {
-    return (<Link to="/home" className="nav-link me" onClick={props.onClick}><span className="fa fa-sign-out-alt fa-lg"></span> Logout</Link>);
+    return (<Link to="/home" className="nav-link me" onClick={props.onClick}><span className="fa fa-sign-out-alt fa-lg" style={{paddingRight:'7px'}}></span> Logout</Link>);
 }
 
 export default Bar;

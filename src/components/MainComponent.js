@@ -112,7 +112,7 @@ class Main extends Component {
 
         return (
             <div>
-                <div className="container-fluid topSection">
+                <div className="container-fluid topSection row">
                     <Header />
                     <Bar auth={this.props.auth} loginUser={this.props.loginUser} logoutUser={this.props.logoutUser} />
                 </div>
