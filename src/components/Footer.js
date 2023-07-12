@@ -6,7 +6,7 @@ function Footer() {
       <div className="row contactF">
         <div className="row mr-auto ml-auto ">
           <a
-            href="http://www.pec.ac.in"
+            href=""
             className="social-icon"
             target="_blank"
             rel="noopener noreferrer"
@@ -15,7 +15,7 @@ function Footer() {
           </a>
 
           <a
-            href="https://www.facebook.com/PunjabEngineeringCollege/"
+            href=""
             className="social-icon"
             target="_blank"
             rel="noopener noreferrer"
@@ -24,7 +24,7 @@ function Footer() {
           </a>
 
           <a
-            href="https://www.linkedin.com/edu/school?id=20011"
+            href=""
             className="social-icon"
             target="_blank"
             rel="noopener noreferrer"
@@ -32,7 +32,7 @@ function Footer() {
             <i className="fab fa-linkedin-in fa-2x"></i>
           </a>
 
-          <a href="mailto:" className="social-icon">
+          <a href="" className="social-icon">
             <i className="fa fa-envelope fa-2x" target="_blank"></i>
           </a>
         </div>
