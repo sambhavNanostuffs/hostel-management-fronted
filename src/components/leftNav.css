@@ -1,0 +1,15 @@
+.leftNav .nav-link {
+  font-family: GilroyMedium, sans-serif !important;
+  font-size: 1.2rem;
+}
+
+/* .leftNav i {
+  margin-right: 1rem;
+} */
+
+.leftNav li {
+  margin-top: 1rem;
+}
+.leftNav {
+  min-height: 67vh;
+}
