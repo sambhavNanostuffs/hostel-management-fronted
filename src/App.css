@@ -137,7 +137,7 @@ hr {
     rgba(20, 100, 196, 1) 0.4%,
     rgba(33, 152, 214, 1) 100.2%
   );
-  padding: 3% 0%;
+  padding: 1% 0%;
   text-align: center;
   font-family: "Montserrat";
 }
@@ -348,8 +348,4 @@ strong {
 }
 .me :hover {
   color: black;
-}
-
-.me .nav-link {
-  font-family: GilroyMedium, sans-serif !important;
 }
