@@ -4,38 +4,19 @@
   src: url("./assets/fonts/Gilroy-Black.ttf");
 }
 
-@font-face {
-  font-family: "GilroySemibold";
-  src: url("./assets/fonts/Gilroy-SemiBold.ttf");
-}
-
-@font-face {
-  font-family: "GilroyMedium";
-  src: url("./assets/fonts/Gilroy-Medium.ttf");
-}
-
-@font-face {
-  font-family: "GilroyBold";
-  src: url("./assets/fonts/Gilroy-Bold.ttf");
-}
-
 html,
 body {
-  font-family: "Inter";
+  /* font-family: 'Questrial', sans-serif; */
   width: 100%;
   height: 100%;
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+  font-family: "Montserrat";
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: GilroyBold, sans-serif;
+div {
+  font-family: "Montserrat";
 }
 
 /* Header */
@@ -104,7 +85,8 @@ body {
   text-align: center;
   line-height: 2rem;
   font-size: 1.2rem;
-  font-family: "Ubuntu", sans-serif;
+  color: white;
+  font-family: "Montserrat";
   font-weight: 500;
 }
 .feature {
@@ -112,7 +94,7 @@ body {
 }
 .feature-heading {
   color: rgba(20, 100, 196, 1);
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Montserrat";
   text-align: center;
   font-family: "Montserrat", sans-serif;
 }
@@ -128,7 +110,7 @@ body {
 .feature-content {
   line-height: 2rem;
   font-size: 1.2rem;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Montserrat";
 }
 .hostel {
   background-color: white;
@@ -155,9 +137,9 @@ hr {
     rgba(20, 100, 196, 1) 0.4%,
     rgba(33, 152, 214, 1) 100.2%
   );
-  padding: 0.1rem 0;
+  padding: 1% 0%;
   text-align: center;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Montserrat";
 }
 
 .copyright {
@@ -206,6 +188,21 @@ i.info {
   border: 2x solid #094372;
   padding: 10px 10px;
   color: white;
+}
+
+.text {
+  padding-left: 60px;
+  font-family: "Montserrat";
+}
+
+.inline {
+  display: inline-block;
+}
+.myForm {
+  font-family: "Montserrat", sans-serif;
+}
+strong {
+  font-size: 1.5rem;
 }
 
 .text {
@@ -351,8 +348,4 @@ strong {
 }
 .me :hover {
   color: black;
-}
-
-.me .nav-link {
-  font-family: GilroyMedium, sans-serif !important;
 }
