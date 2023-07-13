@@ -89,7 +89,7 @@ class Admin extends Component {
           designation: element.designation,
           mobile: element.mobileNo,
           date: element.joiningDate.split("T")[0],
-          address: element.hostel.name,
+          address: element.hostel,
           actions: (
             <div>
               <Link
@@ -210,7 +210,7 @@ class Admin extends Component {
           sid: element.sid,
           branch: element.branch,
           amount: element.payment,
-          date: element.paymentDate.split("T")[0],
+          date: element.paymentDate.$date.split("T")[0],
           actions: (
             <div>
               <Link
