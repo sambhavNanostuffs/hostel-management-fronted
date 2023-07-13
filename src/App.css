@@ -12,11 +12,11 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
-  font-family: "Montserrat";
+  font-family: "Montserrat" !important;
 }
 
 div {
-  font-family: "Montserrat";
+  font-family: "Montserrat" !important;
 }
 
 /* Header */
