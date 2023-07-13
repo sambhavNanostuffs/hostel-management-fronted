@@ -1,5 +1,6 @@
 import * as ActionTypes from "./actionTypes";
 import { baseUrl } from "../shared/baseUrl";
+import Student from "../components/StudentMainComponent";
 
 export const mealbillLoading = () => ({
   type: ActionTypes.MEALBILL_LOADING,
@@ -240,46 +241,48 @@ export const postStudent = (student) => (dispatch) => {
     //photo: student.photo
   };
   console.log("Student: ", newStudent);
+  alert("Student has been added Successfully!!");
+  dispatch(fetchStudents(newStudent));
 
-  const bearer = "Bearer " + localStorage.getItem("token");
+  //   const bearer = "Bearer " + localStorage.getItem("token");
 
-  return fetch(baseUrl + "students", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: bearer,
-    },
-    body: JSON.stringify(newStudent),
-    credentials: "same-origin",
-  })
-    .then(
-      (response) => {
-        console.log(response);
-        if (response.ok) {
-          return response;
-        } else {
-          var error = new Error(
-            "Error " + response.status + ": " + response.statusText
-          );
-          error.response = response;
-          throw error;
-        }
-      },
-      (error) => {
-        var errmess = new Error(error.message);
-        throw errmess;
-      }
-    )
-    .then((response) => response.json())
-    .then((response) => {
-      alert("Student has been added Successfully!!");
-      dispatch(addStudent(response));
-      dispatch(fetchStudents());
-    })
-    .catch((error) => {
-      console.log("Post students ", error.message);
-      alert("Your student could not be added\nError: " + error.message);
-    });
+  //   return fetch(baseUrl + "students", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: bearer,
+  //     },
+  //     body: JSON.stringify(newStudent),
+  //     credentials: "same-origin",
+  //   })
+  //     .then(
+  //       (response) => {
+  //         console.log(response);
+  //         if (response.ok) {
+  //           return response;
+  //         } else {
+  //           var error = new Error(
+  //             "Error " + response.status + ": " + response.statusText
+  //           );
+  //           error.response = response;
+  //           throw error;
+  //         }
+  //       },
+  //       (error) => {
+  //         var errmess = new Error(error.message);
+  //         throw errmess;
+  //       }
+  //     )
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       alert("Student has been added Successfully!!");
+  //       dispatch(addStudent(response));
+  //       dispatch(fetchStudents());
+  //     })
+  //     .catch((error) => {
+  //       console.log("Post students ", error.message);
+  //       alert("Your student could not be added\nError: " + error.message);
+  //     });
 };
 
 export const updateStudent = (student) => (dispatch) => {
@@ -335,133 +338,138 @@ export const updateStudent = (student) => (dispatch) => {
     });
 };
 
-export const fetchStudents = () => (dispatch) => {
-  dispatch(studentsLoading(true));
+export const fetchStudents =
+  (student = false) =>
+  (dispatch) => {
+    dispatch(studentsLoading(true));
 
-  const students = [
-    {
-      _id: {
-        $oid: "64afc7a17c6dcc4b20e82843",
+    const students = [
+      {
+        _id: {
+          $oid: "64afc7a17c6dcc4b20e82843",
+        },
+        studentName: "Ajay",
+        sid: "34536342",
+        mobileNo: "9898989898",
+        dob: {
+          $date: "2004-01-13T00:00:00.000Z",
+        },
+        gender: "Male",
+        email: "ajay@hostel.com",
+        branch: "CSE",
+        nationality: "indian",
+        address: "Sector-62 noida uttar pradesh",
+        fatherName: "Vijay",
+        motherName: "nisha",
+        fatherMobile: "9898989898",
+        hostel: {
+          $oid: "5f37923011855135682d1ae8",
+        },
+        __v: 0,
       },
-      studentName: "Ajay",
-      sid: "34536342",
-      mobileNo: "9898989898",
-      dob: {
-        $date: "2004-01-13T00:00:00.000Z",
+      {
+        _id: {
+          $oid: "64afc7a17c6dcc4b20e82844",
+        },
+        studentName: "Shiv",
+        sid: "34536343",
+        mobileNo: "9898989898",
+        dob: {
+          $date: "2004-01-13T00:00:00.000Z",
+        },
+        gender: "Male",
+        email: "Shiv@hostel.com",
+        branch: "CSE",
+        nationality: "indian",
+        address: "Sector-62 noida uttar pradesh",
+        fatherName: "Ahsok",
+        motherName: "Anjali",
+        fatherMobile: "9898989898",
+        hostel: {
+          $oid: "5f37923011855135682d1ae8",
+        },
+        __v: 0,
       },
-      gender: "Male",
-      email: "ajay@hostel.com",
-      branch: "CSE",
-      nationality: "indian",
-      address: "Sector-62 noida uttar pradesh",
-      fatherName: "Vijay",
-      motherName: "nisha",
-      fatherMobile: "9898989898",
-      hostel: {
-        $oid: "5f37923011855135682d1ae8",
+      {
+        _id: {
+          $oid: "64afc7a17c6dcc4b20e82845",
+        },
+        studentName: "Vishal",
+        sid: "34536344",
+        mobileNo: "9898989898",
+        dob: {
+          $date: "2004-01-13T00:00:00.000Z",
+        },
+        gender: "Male",
+        email: "Vishal@hostel.com",
+        branch: "CSE",
+        nationality: "indian",
+        address: "Sector-62 noida uttar pradesh",
+        fatherName: "Ram",
+        motherName: "Durga",
+        fatherMobile: "9898989898",
+        hostel: {
+          $oid: "5f37923011855135682d1ae8",
+        },
+        __v: 0,
       },
-      __v: 0,
-    },
-    {
-      _id: {
-        $oid: "64afc7a17c6dcc4b20e82844",
+      {
+        _id: {
+          $oid: "64afc7a17c6dcc4b20e82846",
+        },
+        studentName: "Pankaj",
+        sid: "34536347",
+        mobileNo: "9898989898",
+        dob: {
+          $date: "2004-01-13T00:00:00.000Z",
+        },
+        gender: "Male",
+        email: "Pankaj@hostel.com",
+        branch: "CSE",
+        nationality: "indian",
+        address: "Sector-62 noida uttar pradesh",
+        fatherName: "Prakash",
+        motherName: "Neha",
+        fatherMobile: "9898989898",
+        hostel: {
+          $oid: "5f37923011855135682d1ae8",
+        },
+        __v: 0,
       },
-      studentName: "Shiv",
-      sid: "34536343",
-      mobileNo: "9898989898",
-      dob: {
-        $date: "2004-01-13T00:00:00.000Z",
-      },
-      gender: "Male",
-      email: "Shiv@hostel.com",
-      branch: "CSE",
-      nationality: "indian",
-      address: "Sector-62 noida uttar pradesh",
-      fatherName: "Ahsok",
-      motherName: "Anjali",
-      fatherMobile: "9898989898",
-      hostel: {
-        $oid: "5f37923011855135682d1ae8",
-      },
-      __v: 0,
-    },
-    {
-      _id: {
-        $oid: "64afc7a17c6dcc4b20e82845",
-      },
-      studentName: "Vishal",
-      sid: "34536344",
-      mobileNo: "9898989898",
-      dob: {
-        $date: "2004-01-13T00:00:00.000Z",
-      },
-      gender: "Male",
-      email: "Vishal@hostel.com",
-      branch: "CSE",
-      nationality: "indian",
-      address: "Sector-62 noida uttar pradesh",
-      fatherName: "Ram",
-      motherName: "Durga",
-      fatherMobile: "9898989898",
-      hostel: {
-        $oid: "5f37923011855135682d1ae8",
-      },
-      __v: 0,
-    },
-    {
-      _id: {
-        $oid: "64afc7a17c6dcc4b20e82846",
-      },
-      studentName: "Pankaj",
-      sid: "34536347",
-      mobileNo: "9898989898",
-      dob: {
-        $date: "2004-01-13T00:00:00.000Z",
-      },
-      gender: "Male",
-      email: "Pankaj@hostel.com",
-      branch: "CSE",
-      nationality: "indian",
-      address: "Sector-62 noida uttar pradesh",
-      fatherName: "Prakash",
-      motherName: "Neha",
-      fatherMobile: "9898989898",
-      hostel: {
-        $oid: "5f37923011855135682d1ae8",
-      },
-      __v: 0,
-    },
-  ];
-  dispatch(studentsSuccess(students));
-  //   const bearer = "Bearer " + localStorage.getItem("token");
+    ];
+    if (student) {
+      students.push(student);
+    }
+    dispatch(studentsSuccess(students));
+    //   const bearer = "Bearer " + localStorage.getItem("token");
 
-  //   return fetch(baseUrl + "students", {
-  //     headers: {
-  //       method: "GET",
-  //       Authorization: bearer,
-  //     },
-  //   })
-  //     .then(
-  //       (response) => {
-  //         if (response.ok) {
-  //           return response;
-  //         } else {
-  //           var error = new Error(
-  //             "Error " + response.status + ": " + response.statusText
-  //           );
-  //           error.response = response;
-  //           throw error;
-  //         }
-  //       },
-  //       (error) => {
-  //         var errmess = new Error(error.message);
-  //         throw errmess;
-  //       }
-  //     )
-  //     .then((response) => response.json())
-  //     .then((students) => dispatch(studentsSuccess(students)))
-  //     .catch((error) => dispatch(studentsFailed(error.message)));
-};
+    //   return fetch(baseUrl + "students", {
+    //     headers: {
+    //       method: "GET",
+    //       Authorization: bearer,
+    //     },
+    //   })
+    //     .then(
+    //       (response) => {
+    //         if (response.ok) {
+    //           return response;
+    //         } else {
+    //           var error = new Error(
+    //             "Error " + response.status + ": " + response.statusText
+    //           );
+    //           error.response = response;
+    //           throw error;
+    //         }
+    //       },
+    //       (error) => {
+    //         var errmess = new Error(error.message);
+    //         throw errmess;
+    //       }
+    //     )
+    //     .then((response) => response.json())
+    //     .then((students) => dispatch(studentsSuccess(students)))
+    //     .catch((error) => dispatch(studentsFailed(error.message)));
+  };
 
 export const deleteStudent = (studentId) => (dispatch) => {
   const bearer = "Bearer " + localStorage.getItem("token");
@@ -582,44 +590,46 @@ export const postEmployee = (employee) => (dispatch) => {
     eid: employee.eid,
   };
   console.log("Employee: ", JSON.stringify(newEmployee));
+  alert("Employee has been added Successfully!!");
+  dispatch(addEmployee(newEmployee));
 
-  const bearer = "Bearer " + localStorage.getItem("token");
+  //   const bearer = "Bearer " + localStorage.getItem("token");
 
-  return fetch(baseUrl + "employees", {
-    method: "POST",
-    body: JSON.stringify(newEmployee),
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: bearer,
-    },
-  })
-    .then(
-      (response) => {
-        if (response.ok) {
-          return response;
-        } else {
-          var error = new Error(
-            "Error " + response.status + ": " + response.statusText
-          );
-          error.response = response;
-          throw error;
-        }
-      },
-      (error) => {
-        var errmess = new Error(error.message);
-        throw errmess;
-      }
-    )
-    .then((response) => response.json())
-    .then((response) => {
-      alert("Employee has been added Successfully!!");
-      dispatch(addEmployee(response));
-      dispatch(fetchEmployees());
-    })
-    .catch((error) => {
-      console.log("Post employees ", error.message);
-      alert("Your employee could not be added\nError: " + error.message);
-    });
+  //   return fetch(baseUrl + "employees", {
+  //     method: "POST",
+  //     body: JSON.stringify(newEmployee),
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: bearer,
+  //     },
+  //   })
+  //     .then(
+  //       (response) => {
+  //         if (response.ok) {
+  //           return response;
+  //         } else {
+  //           var error = new Error(
+  //             "Error " + response.status + ": " + response.statusText
+  //           );
+  //           error.response = response;
+  //           throw error;
+  //         }
+  //       },
+  //       (error) => {
+  //         var errmess = new Error(error.message);
+  //         throw errmess;
+  //       }
+  //     )
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       alert("Employee has been added Successfully!!");
+  //       dispatch(addEmployee(response));
+  //       dispatch(fetchEmployees());
+  //     })
+  //     .catch((error) => {
+  //       console.log("Post employees ", error.message);
+  //       alert("Your employee could not be added\nError: " + error.message);
+  //     });
 };
 
 export const fetchEmployees = () => (dispatch) => {
@@ -777,44 +787,46 @@ export const postNotice = (notice) => (dispatch) => {
     description: notice.description,
   };
   console.log("Notice: ", newNotice);
+  alert("Notice added Successfully!!");
+  dispatch(addNotice(newNotice));
 
-  const bearer = "Bearer " + localStorage.getItem("token");
+  //   const bearer = "Bearer " + localStorage.getItem("token");
 
-  return fetch(baseUrl + "notices", {
-    method: "POST",
-    body: JSON.stringify(newNotice),
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: bearer,
-    },
-  })
-    .then(
-      (response) => {
-        if (response.ok) {
-          return response;
-        } else {
-          var error = new Error(
-            "Error " + response.status + ": " + response.statusText
-          );
-          error.response = response;
-          throw error;
-        }
-      },
-      (error) => {
-        var errmess = new Error(error.message);
-        throw errmess;
-      }
-    )
-    .then((response) => response.json())
-    .then((response) => {
-      alert("Notice added Successfully!!");
-      dispatch(addNotice(response));
-      dispatch(fetchNotices());
-    })
-    .catch((error) => {
-      console.log("Post notices ", error.message);
-      alert("Your notice could not be added\nError: " + error.message);
-    });
+  //   return fetch(baseUrl + "notices", {
+  //     method: "POST",
+  //     body: JSON.stringify(newNotice),
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: bearer,
+  //     },
+  //   })
+  //     .then(
+  //       (response) => {
+  //         if (response.ok) {
+  //           return response;
+  //         } else {
+  //           var error = new Error(
+  //             "Error " + response.status + ": " + response.statusText
+  //           );
+  //           error.response = response;
+  //           throw error;
+  //         }
+  //       },
+  //       (error) => {
+  //         var errmess = new Error(error.message);
+  //         throw errmess;
+  //       }
+  //     )
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       alert("Notice added Successfully!!");
+  //       dispatch(addNotice(response));
+  //       dispatch(fetchNotices());
+  //     })
+  //     .catch((error) => {
+  //       console.log("Post notices ", error.message);
+  //       alert("Your notice could not be added\nError: " + error.message);
+  //     });
 };
 
 export const fetchNotices = () => (dispatch) => {
