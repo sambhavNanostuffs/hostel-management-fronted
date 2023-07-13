@@ -242,7 +242,7 @@ export const postStudent = (student) => (dispatch) => {
   };
   console.log("Student: ", newStudent);
   alert("Student has been added Successfully!!");
-  dispatch(fetchStudents(newStudent));
+  dispatch(addStudent(newStudent));
 
   //   const bearer = "Bearer " + localStorage.getItem("token");
 
@@ -390,52 +390,29 @@ export const fetchStudents =
         },
         __v: 0,
       },
-      {
-        _id: {
-          $oid: "64afc7a17c6dcc4b20e82845",
-        },
-        studentName: "Vishal",
-        sid: "34536344",
-        mobileNo: "9898989898",
-        dob: {
-          $date: "2004-01-13T00:00:00.000Z",
-        },
-        gender: "Male",
-        email: "Vishal@hostel.com",
-        branch: "CSE",
-        nationality: "indian",
-        address: "Sector-62 noida uttar pradesh",
-        fatherName: "Ram",
-        motherName: "Durga",
-        fatherMobile: "9898989898",
-        hostel: {
-          $oid: "5f37923011855135682d1ae8",
-        },
-        __v: 0,
-      },
-      {
-        _id: {
-          $oid: "64afc7a17c6dcc4b20e82846",
-        },
-        studentName: "Pankaj",
-        sid: "34536347",
-        mobileNo: "9898989898",
-        dob: {
-          $date: "2004-01-13T00:00:00.000Z",
-        },
-        gender: "Male",
-        email: "Pankaj@hostel.com",
-        branch: "CSE",
-        nationality: "indian",
-        address: "Sector-62 noida uttar pradesh",
-        fatherName: "Prakash",
-        motherName: "Neha",
-        fatherMobile: "9898989898",
-        hostel: {
-          $oid: "5f37923011855135682d1ae8",
-        },
-        __v: 0,
-      },
+      //   {
+      //     _id: {
+      //       $oid: "64afc7a17c6dcc4b20e82845",
+      //     },
+      //     studentName: "Vishal",
+      //     sid: "34536344",
+      //     mobileNo: "9898989898",
+      //     dob: {
+      //       $date: "2004-01-13T00:00:00.000Z",
+      //     },
+      //     gender: "Male",
+      //     email: "Vishal@hostel.com",
+      //     branch: "CSE",
+      //     nationality: "indian",
+      //     address: "Sector-62 noida uttar pradesh",
+      //     fatherName: "Ram",
+      //     motherName: "Durga",
+      //     fatherMobile: "9898989898",
+      //     hostel: {
+      //       $oid: "5f37923011855135682d1ae8",
+      //     },
+      //     __v: 0,
+      //   },
     ];
     if (student) {
       students.push(student);
